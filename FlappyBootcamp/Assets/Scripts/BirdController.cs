@@ -22,12 +22,14 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementValue)
     {
+        if (!this.enabled) return;
         Vector2 movementVector = movementValue.Get<Vector2>();
         movementX = movementVector.x;
     }
 
     void OnJump()
     {
+        if (!this.enabled) return;
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 }

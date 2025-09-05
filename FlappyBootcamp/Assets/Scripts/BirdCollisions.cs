@@ -33,7 +33,6 @@ public class BirdCollisions : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             survivalTime += 10;
-            SetScore();
         }
         if (other.gameObject.CompareTag("Obstacle"))
         {

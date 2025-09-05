@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float forwardMomentum;
     private float movementX;
-    //private float movementY;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -25,7 +24,6 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
         movementX = movementVector.x;
-        //movementY = movementVector.y;
     }
 
     void OnJump()

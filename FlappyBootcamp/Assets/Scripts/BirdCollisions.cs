@@ -8,6 +8,7 @@ public class BirdCollisions : MonoBehaviour
     public PlayerController playerController;
     public TextMeshProUGUI score;
     public Camera mainCamera;
+    public ObstacleSpawner obstacleSpawner;
     private float survivalTime = 0f;
     private bool gameOver = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,6 +40,10 @@ public class BirdCollisions : MonoBehaviour
             playerController.enabled = false;
             mainCamera.GetComponent<CameraController>().enabled = false;
             gameOver = true;
+        }
+        if (other.gameObject.CompareTag("Checkpoint"))
+        {
+            obstacleSpawner.Cycle(other.gameObject);
         }
     }
 

@@ -23,13 +23,13 @@ public class ObstacleSpawner : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     void SpawnObstacle()
     {
         int index = Random.Range(0, obstacles.Count);
-        obstacles[index].transform.position = new Vector3(obstacles[index].transform.position.x, obstacles[index].transform.position.y, playerTransform.position.z + obstacleSpacing);
+        obstacles[index].transform.position = new Vector3(obstacles[index].transform.position.x, obstacles[index].transform.position.y, obstacleSpacing);
         obstacles[index].SetActive(true);
         obstacles.RemoveAt(index);
         obstacleSpacing += 20f;
@@ -37,7 +37,14 @@ public class ObstacleSpawner : MonoBehaviour
 
     void DespawnObstacle(GameObject obstacle)
     {
-        obstacle.SetActive(false);
-        obstacles.Add(obstacle);
+        obstacle.transform.parent.gameObject.SetActive(false);
+        obstacles.Add(obstacle.transform.parent.gameObject);
     }
+
+    public void Cycle(GameObject obstacle)
+    {
+        DespawnObstacle(obstacle);
+        SpawnObstacle();
+    }
+
 }

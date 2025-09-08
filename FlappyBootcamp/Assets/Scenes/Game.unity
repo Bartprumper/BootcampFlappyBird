@@ -455,6 +455,7 @@ MonoBehaviour:
   playerController: {fileID: 320789658}
   score: {fileID: 1596574056}
   mainCamera: {fileID: 330585545}
+  obstacleSpawner: {fileID: 512590224}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0

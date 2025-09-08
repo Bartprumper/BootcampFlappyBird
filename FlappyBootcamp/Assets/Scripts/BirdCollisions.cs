@@ -44,6 +44,7 @@ public class BirdCollisions : MonoBehaviour
         if (other.gameObject.CompareTag("Checkpoint"))
         {
             obstacleSpawner.Cycle(other.gameObject);
+            playerController.IncreaseSpeed();
         }
     }
 

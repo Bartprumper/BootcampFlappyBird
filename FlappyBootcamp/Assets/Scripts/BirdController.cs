@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float forwardMomentum;
     private float movementX;
+    private int speedIncreaseInterval = 0;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,5 +33,19 @@ public class PlayerController : MonoBehaviour
     {
         if (!this.enabled) return;
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+    public void IncreaseSpeed()
+    {
+        if (speedIncreaseInterval == 5)
+        {
+            forwardMomentum += 2f;
+            speedIncreaseInterval = 0;
+        }
+        else
+        {
+            speedIncreaseInterval++;
+        }
+        
     }
 }

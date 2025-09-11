@@ -10,6 +10,7 @@ public class BirdCollisions : MonoBehaviour
     public Camera mainCamera;
     public ObstacleSpawner obstacleSpawner;
     public GameObject gameOverUI;
+    public ParticleSystem checkpointParticles;
     private float totalScore = 0f;
     private bool gameOver = false;
     private float finalScoreYPos;
@@ -46,6 +47,7 @@ public class BirdCollisions : MonoBehaviour
         if (other.gameObject.CompareTag("Checkpoint"))
         {
             obstacleSpawner.Cycle(other.gameObject);
+            checkpointParticles.Play();
             playerController.IncreaseSpeed();
         }
     }

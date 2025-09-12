@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float forwardMomentum;
     private float movementX;
-    private int speedIncreaseInterval = 0;
+    private int speedIncreaseCounter = 1;
+    private int speedIncreaseInterval = 5;
     private int rotationSpeed = 150;
     private int rotationY;
     void Start()
@@ -49,15 +50,15 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseSpeed()
     {
-        if (speedIncreaseInterval == 5)
+        if (speedIncreaseCounter == speedIncreaseInterval)
         {
             forwardMomentum += 2f;
-            speedIncreaseInterval = 0;
+            speedIncreaseCounter = 1;
             gameUI.GetComponent<GameUI>().ShowSpeedText();
         }
         else
         {
-            speedIncreaseInterval++;
+            speedIncreaseCounter++;
         }
     }
 

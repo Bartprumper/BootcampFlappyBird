@@ -2,6 +2,7 @@ using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class BirdCollisions : MonoBehaviour
 {
@@ -11,24 +12,15 @@ public class BirdCollisions : MonoBehaviour
     public ObstacleSpawner obstacleSpawner;
     public GameObject gameOverUI;
     public ParticleSystem checkpointParticles;
+    public UIDocument gameUI;
     private float totalScore = 0f;
     private bool gameOver = false;
-    private float finalScoreYPos;
-    private int finalScoreOffset = 375;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        SetScore();
-        finalScoreYPos = score.transform.position.y - finalScoreOffset;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         totalScore += Time.deltaTime;
         if (!gameOver)
         {
-            SetScore();
+            gameUI.GetComponent<GameUI>().UpdateScore(totalScore);
         }
 
     }
@@ -52,10 +44,7 @@ public class BirdCollisions : MonoBehaviour
         }
     }
 
-    void SetScore()
-    {
-        score.text = "SCORE: " + math.round(totalScore).ToString();
-    }
+
 
     private void GameOver()
     {
@@ -63,7 +52,6 @@ public class BirdCollisions : MonoBehaviour
         mainCamera.GetComponent<CameraController>().enabled = false;
         gameOver = true;
         gameOverUI.transform.gameObject.SetActive(true);
-        score.fontSize = 72;
-        score.transform.position = new Vector3(score.transform.position.x, finalScoreYPos, score.transform.position.z);
+        gameUI.GetComponent<GameUI>().FinalScore(totalScore);
     }
 }

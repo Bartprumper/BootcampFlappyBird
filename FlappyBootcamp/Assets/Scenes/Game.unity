@@ -144,8 +144,8 @@ Transform:
   m_GameObject: {fileID: 68752471}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 490}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 990}
+  m_LocalScale: {x: 1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 679449333}
@@ -409,7 +409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &243830421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,7 +513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &303941802
 Transform:
   m_ObjectHideFlags: 0
@@ -766,6 +766,7 @@ MonoBehaviour:
   obstacleSpawner: {fileID: 512590224}
   gameOverUI: {fileID: 2021170027}
   checkpointParticles: {fileID: 1277968859}
+  gameUI: {fileID: 303941803}
 --- !u!96 &320789660
 TrailRenderer:
   serializedVersion: 3
@@ -1380,7 +1381,7 @@ Transform:
   m_GameObject: {fileID: 585120967}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.60876137, w: 0.7933534}
-  m_LocalPosition: {x: 6.2, y: 5, z: 0}
+  m_LocalPosition: {x: 6.2, y: 4.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13941,7 +13942,7 @@ Transform:
   m_GameObject: {fileID: 2141268946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.60876137, w: 0.7933534}
-  m_LocalPosition: {x: -6.2, y: 5, z: 0}
+  m_LocalPosition: {x: -6.2, y: 4.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -1,3 +1,5 @@
+using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -5,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
+    public GameObject speedText;
     public ParticleSystem jumpParticles;
     public float speed;
     public float jumpForce;
@@ -48,11 +51,18 @@ public class PlayerController : MonoBehaviour
         {
             forwardMomentum += 2f;
             speedIncreaseInterval = 0;
+            speedText.SetActive(true);
+            StartCoroutine(HideSpeedText());
         }
         else
         {
             speedIncreaseInterval++;
         }
-        
+    }
+
+    private IEnumerator HideSpeedText()
+    {
+        yield return new WaitForSeconds(2);
+        speedText.SetActive(false);
     }
 }

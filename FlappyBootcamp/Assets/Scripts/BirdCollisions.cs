@@ -62,7 +62,7 @@ public class BirdCollisions : MonoBehaviour
         playerController.enabled = false;
         mainCamera.GetComponent<CameraController>().enabled = false;
         gameOver = true;
-        gameOverUI.SetActive(true);
+        gameOverUI.transform.gameObject.SetActive(true);
         score.fontSize = 72;
         score.transform.position = new Vector3(score.transform.position.x, finalScoreYPos, score.transform.position.z);
     }

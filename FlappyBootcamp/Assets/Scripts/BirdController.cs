@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     {
         if (speedIncreaseCounter == speedIncreaseInterval)
         {
-            forwardMomentum += 2f;
+            forwardMomentum += 1f;
             speedIncreaseCounter = 1;
             gameUI.GetComponent<GameUI>().ShowSpeedText();
         }

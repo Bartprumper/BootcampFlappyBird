@@ -9,6 +9,7 @@ public class BirdCollisions : MonoBehaviour
     public PlayerController playerController;
     public TextMeshProUGUI score;
     public Camera mainCamera;
+    public TunnelGenerator tunnelGenerator;
     public ObstacleSpawner obstacleSpawner;
     public GameObject gameOverUI;
     public ParticleSystem checkpointParticles;
@@ -41,6 +42,7 @@ public class BirdCollisions : MonoBehaviour
             obstacleSpawner.Cycle(other.gameObject);
             checkpointParticles.Play();
             playerController.IncreaseSpeed();
+            tunnelGenerator.Cycle();
         }
     }
 

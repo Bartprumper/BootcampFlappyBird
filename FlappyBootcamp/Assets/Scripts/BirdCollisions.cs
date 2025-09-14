@@ -32,6 +32,7 @@ public class BirdCollisions : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             totalScore += 10;
+            gameUI.GetComponent<GameUI>().ShowBonusScore();
             SFXManager.instance.PlaySFXClip(audioClips[2], transform, 1f, UnityEngine.Random.Range(0.7f, 1.2f));
         }
         if (other.gameObject.CompareTag("Obstacle"))

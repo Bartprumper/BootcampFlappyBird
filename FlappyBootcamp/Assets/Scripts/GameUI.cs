@@ -6,6 +6,7 @@ public class GameUI : MonoBehaviour
 {
     private Label speedText;
     private Label scoreText;
+    private Label bonusScore;
     private UIDocument uiDocument;
     private float finalScoreYPos;
     void Awake()
@@ -15,6 +16,8 @@ public class GameUI : MonoBehaviour
         speedText.style.display = DisplayStyle.None;
         scoreText = uiDocument.rootVisualElement.Q<Label>("ScoreCounter") as Label;
         scoreText.style.display = DisplayStyle.None;
+        bonusScore = uiDocument.rootVisualElement.Q<Label>("BonusScore") as Label;
+        bonusScore.style.display = DisplayStyle.None;
         finalScoreYPos = scoreText.transform.position.y + 250;
     }
 
@@ -30,7 +33,13 @@ public class GameUI : MonoBehaviour
     public void ShowSpeedText()
     {
         speedText.style.display = DisplayStyle.Flex;
-        StartCoroutine(HideText(speedText));
+        StartCoroutine(HideText(speedText, 2f));
+    }
+
+    public void ShowBonusScore()
+    {
+        bonusScore.style.display = DisplayStyle.Flex;
+        StartCoroutine(HideText(bonusScore, 1f));
     }
 
     public void FinalScore(float score)
@@ -39,9 +48,9 @@ public class GameUI : MonoBehaviour
         scoreText.transform.position = new Vector3(scoreText.transform.position.x, finalScoreYPos, scoreText.transform.position.z);
     }
 
-    private IEnumerator HideText(Label text)
+    private IEnumerator HideText(Label text, float delay)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(delay);
         text.style.display = DisplayStyle.None;
     }
     

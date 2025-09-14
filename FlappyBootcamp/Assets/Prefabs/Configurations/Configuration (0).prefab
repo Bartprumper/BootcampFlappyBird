@@ -33,7 +33,7 @@ Transform:
   - {fileID: 2569567144406720592}
   - {fileID: 8980979625339231927}
   - {fileID: 3942420616739966883}
-  - {fileID: 3091668606423411172}
+  - {fileID: 2364972789909551980}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2907590562682296565
@@ -164,7 +164,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 860532234649893029, guid: 506ac2448dd3d744084a2c5a69852568, type: 3}
   m_PrefabInstance: {fileID: 4415624591064577798}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5902950841648359871
+--- !u!1001 &6619935814247185207
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -174,7 +174,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5386479387270084246, guid: f1ea553832ad60d40bd275b36747e13d, type: 3}
       propertyPath: m_Name
-      value: Pickup (1)
+      value: Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 8866653856416858203, guid: f1ea553832ad60d40bd275b36747e13d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -221,10 +221,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1ea553832ad60d40bd275b36747e13d, type: 3}
---- !u!4 &3091668606423411172 stripped
+--- !u!4 &2364972789909551980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8866653856416858203, guid: f1ea553832ad60d40bd275b36747e13d, type: 3}
-  m_PrefabInstance: {fileID: 5902950841648359871}
+  m_PrefabInstance: {fileID: 6619935814247185207}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7037932178700862612
 PrefabInstance:

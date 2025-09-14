@@ -33,8 +33,9 @@ public class ObstacleSpawner : MonoBehaviour
         int index = Random.Range(0, obstacles.Count);
         obstacles[index].transform.position = new Vector3(obstacles[index].transform.position.x, obstacles[index].transform.position.y, obstacleSpawnZ);
         obstacles[index].SetActive(true);
-        obstacles.RemoveAt(index);
         obstacleSpawnZ += obstacleSpacing;
+        ReactivatePickup(index);
+        obstacles.RemoveAt(index);
     }
 
     void DespawnObstacle(GameObject obstacle)
@@ -49,4 +50,12 @@ public class ObstacleSpawner : MonoBehaviour
         DespawnObstacle(obstacle);
     }
 
+    private void ReactivatePickup(int index)
+    {
+        GameObject pickup = obstacles[index].transform.Find("Pickup").gameObject;
+        if (!pickup.activeInHierarchy && pickup != null)
+        {
+            pickup.SetActive(true);
+        }
+    }
 }

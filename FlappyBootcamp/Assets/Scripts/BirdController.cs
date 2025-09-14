@@ -8,9 +8,9 @@ using UnityEngine.UIElements;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
-    public GameObject speedText;
     public UIDocument gameUI;
     public ParticleSystem jumpParticles;
+    public AudioClip jumpSFX;
     public float speed;
     public float jumpForce;
     public float forwardMomentum;
@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         if (!this.enabled) return;
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         jumpParticles.Play();
+        SFXManager.instance.PlaySFXClip(jumpSFX, transform, 0.8f, UnityEngine.Random.Range(0.5f, 1f));
     }
 
     public void IncreaseSpeed()

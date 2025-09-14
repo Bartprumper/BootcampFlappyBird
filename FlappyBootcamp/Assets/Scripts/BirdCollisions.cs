@@ -7,13 +7,13 @@ using UnityEngine.UIElements;
 public class BirdCollisions : MonoBehaviour
 {
     public PlayerController playerController;
-    public TextMeshProUGUI score;
     public Camera mainCamera;
     public TunnelGenerator tunnelGenerator;
     public ObstacleSpawner obstacleSpawner;
     public GameObject gameOverUI;
     public ParticleSystem checkpointParticles;
     public UIDocument gameUI;
+    public AudioClip[] audioClips;
     private float totalScore = 0f;
     private bool gameOver = false;
     void Update()
@@ -32,6 +32,7 @@ public class BirdCollisions : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             totalScore += 10;
+            SFXManager.instance.PlaySFXClip(audioClips[2], transform, 1f, UnityEngine.Random.Range(0.7f, 1.2f));
         }
         if (other.gameObject.CompareTag("Obstacle"))
         {
@@ -43,6 +44,7 @@ public class BirdCollisions : MonoBehaviour
             checkpointParticles.Play();
             playerController.IncreaseSpeed();
             tunnelGenerator.Cycle();
+            SFXManager.instance.PlaySFXClip(audioClips[1], transform, 1f, UnityEngine.Random.Range(0.7f, 1.2f));
         }
     }
 
@@ -50,10 +52,12 @@ public class BirdCollisions : MonoBehaviour
 
     private void GameOver()
     {
+        if (gameOver) return;
+        SFXManager.instance.PlaySFXClip(audioClips[0], transform, 1f, 1f);
         playerController.enabled = false;
         mainCamera.GetComponent<CameraController>().enabled = false;
-        gameOver = true;
         gameOverUI.transform.gameObject.SetActive(true);
         gameUI.GetComponent<GameUI>().FinalScore(totalScore);
+        gameOver = true;
     }
 }

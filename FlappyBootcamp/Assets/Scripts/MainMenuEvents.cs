@@ -11,6 +11,7 @@ public class MainMenuEvents : MonoBehaviour
     public GameObject player;
     public GameObject obstacles;
     public GameObject tunnel;
+    public AudioClip startSFX;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class MainMenuEvents : MonoBehaviour
         startButton.style.display = DisplayStyle.None;
         quitButton.style.display = DisplayStyle.None;
         StartCoroutine(ActivatePlayer());
+        SFXManager.instance.PlaySFXClip(startSFX, transform, 1f, 1f);
     }
 
     private void OnQuitGameClick(ClickEvent evt)
@@ -48,6 +50,7 @@ public class MainMenuEvents : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         player.SetActive(true);
+        
         transform.gameObject.SetActive(false);
     }
 }

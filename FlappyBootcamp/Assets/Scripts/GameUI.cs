@@ -30,7 +30,7 @@ public class GameUI : MonoBehaviour
     public void ShowSpeedText()
     {
         speedText.style.display = DisplayStyle.Flex;
-        StartCoroutine(HideSpeedText());
+        StartCoroutine(HideText(speedText));
     }
 
     public void FinalScore(float score)
@@ -39,10 +39,10 @@ public class GameUI : MonoBehaviour
         scoreText.transform.position = new Vector3(scoreText.transform.position.x, finalScoreYPos, scoreText.transform.position.z);
     }
 
-    private IEnumerator HideSpeedText()
+    private IEnumerator HideText(Label text)
     {
         yield return new WaitForSeconds(2);
-        speedText.style.display = DisplayStyle.None;
+        text.style.display = DisplayStyle.None;
     }
     
 

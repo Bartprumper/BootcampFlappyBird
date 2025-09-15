@@ -2,7 +2,10 @@
     <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=dd9b7bdb7b845fd48a18bb7ba45c1cd8&amp;type=3#MainMenuStyle" />
     <ui:VisualElement name="Container" style="flex-grow: 1;">
         <ui:Label text="Major League Birdball" name="Title" class="header" style="top: 150px;" />
-        <ui:Button text="Start Game" name="StartGame" class="button" style="top: 400px;" />
+        <ui:Button text="Start Game" name="StartGame" class="button" style="top: 350px;" />
+        <ui:Button text="Rules" name="Rules" class="button" style="top: 400px;" />
         <ui:Button text="Quit Game" name="QuitGame" class="button" style="top: 450px;" />
     </ui:VisualElement>
+    <ui:Label text="Move through the obstacles and dodge the baseball bats.&#10;Score is calculated as seconds survived.&#10;Grab trophies to gain extra score.&#10;Beware, trophies are usually in tighter openings.&#10;No lives, one hit and it is over.&#10;" name="RulesText" class="header" style="font-size: 50px; top: auto; position: relative; bottom: 450px; align-items: center; align-self: center; align-content: flex-start;" />
+    <ui:Button text="Return" name="Return" class="button" style="top: auto; bottom: 268px;" />
 </ui:UXML>

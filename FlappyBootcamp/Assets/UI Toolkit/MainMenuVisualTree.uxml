@@ -6,6 +6,6 @@
         <ui:Button text="Rules" name="Rules" class="button" style="top: 400px;" />
         <ui:Button text="Quit Game" name="QuitGame" class="button" style="top: 450px;" />
     </ui:VisualElement>
-    <ui:Label text="Move through the obstacles and dodge the baseball bats.&#10;Score is calculated as seconds survived.&#10;Grab trophies to gain extra score.&#10;Beware, trophies are usually in tighter openings.&#10;No lives, one hit and it is over.&#10;" name="RulesText" class="header" style="font-size: 50px; top: auto; position: relative; bottom: 450px; align-items: center; align-self: center; align-content: flex-start;" />
-    <ui:Button text="Return" name="Return" class="button" style="top: auto; bottom: 268px;" />
+    <ui:Label text="Use W to jump and  A and D to move around.&#10;Move through the obstacles and dodge the baseball bats.&#10;Score is calculated as seconds survived.&#10;Grab trophies to gain extra score.&#10;Beware, trophies are usually in tighter openings.&#10;No lives, one hit and it is over.&#10;" name="RulesText" class="header" style="font-size: 50px; top: auto; position: relative; bottom: 400px; align-items: center; align-self: center; align-content: flex-start;" />
+    <ui:Button text="Return" name="Return" emoji-fallback-support="true" class="button" style="top: auto; bottom: 268px;" />
 </ui:UXML>

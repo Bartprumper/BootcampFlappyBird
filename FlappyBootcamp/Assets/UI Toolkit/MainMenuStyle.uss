@@ -1,7 +1,7 @@
 .header {
     -unity-text-align: upper-center;
     font-size: 80px;
-    -unity-font-definition: url("project://database/Assets/Visuals/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&guid=e3265ab4bf004d28a9537516768c1c75&type=3#LiberationSans");
+    -unity-font-definition: url("project://database/Assets/Visuals/Fonts/college.ttf?fileID=12800000&guid=872259d1d84fdba458d73fce136bd571&type=3#college");
     top: 0;
     white-space: normal;
     -unity-font-style: bold;
@@ -35,6 +35,7 @@
     transition-duration: 0.2s;
     transition-timing-function: ease;
     transition-delay: 0s;
+    -unity-font-definition: url("project://database/Assets/Visuals/Fonts/VarsityTeam-Bold.otf?fileID=12800000&guid=42c306ebbcea330458d4fd3f8c28f328&type=3#VarsityTeam-Bold");
 }
 
 .button:hover {

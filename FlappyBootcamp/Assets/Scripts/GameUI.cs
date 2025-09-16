@@ -9,6 +9,7 @@ public class GameUI : MonoBehaviour
     private Label bonusScore;
     private UIDocument uiDocument;
     private float finalScoreYPos;
+    private float finalScoreOffset = 220f;
     void Awake()
     {
         uiDocument = GetComponent<UIDocument>();
@@ -18,7 +19,7 @@ public class GameUI : MonoBehaviour
         scoreText.style.display = DisplayStyle.None;
         bonusScore = uiDocument.rootVisualElement.Q<Label>("BonusScore") as Label;
         bonusScore.style.display = DisplayStyle.None;
-        finalScoreYPos = scoreText.transform.position.y + 250;
+        finalScoreYPos = scoreText.transform.position.y + finalScoreOffset;
     }
 
     public void UpdateScore(float score)
@@ -44,7 +45,7 @@ public class GameUI : MonoBehaviour
 
     public void FinalScore(float score)
     {
-        scoreText.style.fontSize = 65;
+        scoreText.style.fontSize = 80;
         scoreText.transform.position = new Vector3(scoreText.transform.position.x, finalScoreYPos, scoreText.transform.position.z);
     }
 

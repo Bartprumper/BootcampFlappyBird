@@ -60,5 +60,9 @@ public class BirdCollisions : MonoBehaviour
         gameOverUI.transform.gameObject.SetActive(true);
         gameUI.GetComponent<GameUI>().FinalScore(totalScore);
         gameOver = true;
+        if (totalScore > PlayerPrefs.GetFloat("HighScore", 0f))
+        {
+            PlayerPrefs.SetFloat("HighScore", totalScore);
+        }
     }
 }

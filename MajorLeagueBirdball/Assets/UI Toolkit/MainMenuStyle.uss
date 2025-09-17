@@ -1,0 +1,44 @@
+.header {
+    -unity-text-align: upper-center;
+    font-size: 80px;
+    -unity-font-definition: url("project://database/Assets/Visuals/Fonts/college.ttf?fileID=12800000&guid=872259d1d84fdba458d73fce136bd571&type=3#college");
+    top: 0;
+    white-space: normal;
+    -unity-font-style: bold;
+    color: rgb(255, 225, 0);
+    text-overflow: clip;
+    -unity-text-outline-width: 1px;
+    text-shadow: 1000px 1000px 0 rgb(255, 0, 0);
+}
+
+.button {
+    width: 500px;
+    align-items: stretch;
+    align-self: center;
+    height: 150px;
+    font-size: 60px;
+    color: rgb(255, 225, 0);
+    text-shadow: 1000px 1000px 0 rgb(255, 0, 0);
+    background-color: rgba(53, 55, 118, 0.77);
+    border-top-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    border-left-width: 10px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    -unity-font-definition: url("project://database/Assets/Visuals/Fonts/VarsityTeam-Bold.otf?fileID=12800000&guid=42c306ebbcea330458d4fd3f8c28f328&type=3#VarsityTeam-Bold");
+}
+
+.button:hover {
+    scale: 1.1 1.1;
+    background-color: rgb(43, 43, 63);
+}

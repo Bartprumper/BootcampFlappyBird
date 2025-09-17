@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=dd9b7bdb7b845fd48a18bb7ba45c1cd8&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement name="Container" style="flex-grow: 1;">
+        <ui:Label text="Game Over!" name="GameOver" class="header" style="top: 100px; font-size: 100px;" />
+        <ui:Button text="Restart Game" name="RestartGame" class="button" style="top: 400px;" />
+        <ui:Button text="Quit Game" name="QuitGame" class="button" style="top: 450px;" />
+    </ui:VisualElement>
+    <ui:Label text="HighScore" name="HighScore" class="header" style="top: auto; bottom: 650px;" />
+</ui:UXML>
